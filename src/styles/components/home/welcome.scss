@@ -1,0 +1,44 @@
+@import '../../lib/colors.scss';
+@import '../../lib/mixins.scss';
+
+.welcome {
+    margin: 100px 0;
+    &__slogan {
+        font-family: 'semibold';
+        margin-bottom: 15px;
+        color: $blue;
+    }
+    p {
+        color: #828282;
+        font-size: 20px;
+        font-family: 'medium';
+        line-height: 35px;
+        margin-bottom: 56px;
+        margin-top: 20px;
+        max-width: 70%;
+    }
+    &__play {
+        margin-left: 32px;
+        @include flex(center, center);
+        color: $grey;
+        cursor: pointer;
+        line-height: 24px;
+        span {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 12px;
+            background-color: #ffefef;
+            @include flex(center, center);
+            img {
+                opacity: 0.4;
+            }
+        }
+        &:hover {
+            color: #000;
+            img {
+                opacity: 1;
+            }
+        }
+    }
+}

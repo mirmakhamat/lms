@@ -29,12 +29,65 @@
 .justify-content-end {
     justify-content: flex-end;
 }
+.justify-content-between {
+    justify-content: space-between;
+}
+.justify-content-around {
+    justify-content: space-around;
+}
 .align-items-center {
     align-items: center;
+}
+.align-items-end {
+    align-items: flex-end;
 }
 .text-center {
     text-align: center;
 }
 .text-right {
     text-align: right;
+}
+
+.badge {
+    padding: 4px 22px;
+    border-radius: 100px;
+    font-size: 18px;
+    color: #fff;
+    background-color: $blue;
+    display: inline-block;
+    &.purple {
+        background-color: $purple;
+    }
+    &.red {
+        background-color: $red;
+    }
+}
+
+.pos {
+    position: relative;
+}
+
+img {
+    &.full {
+        width: 100%;
+        
+    }
+}
+
+.sticky {
+    position: sticky;
+    top: 15px;
+}
+
+.text-purple {
+    color: $purple;
+}
+.text-blue {
+    color: $blue;
+}
+
+.text {
+    font-size: 20px;
+    color: $grey;
+    line-height: 28px;
 }

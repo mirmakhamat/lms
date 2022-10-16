@@ -1,0 +1,31 @@
+.whom {
+    position: relative;
+    &__chat {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+    h2 {
+        span {
+            background: linear-gradient(129.1deg, #2E90D1 57.94%, #78258D 71.75%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+    }
+    &__box {
+        margin-bottom: 40px;
+        padding: 20px 40px;
+        img {
+            margin-bottom: 16px;
+        }
+    }
+    &__title {
+        font-size: 24px;
+        font-family: 'bold';
+        line-height: 32px;
+        margin-bottom: 10px;
+    }
+}

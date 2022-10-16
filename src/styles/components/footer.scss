@@ -1,0 +1,66 @@
+@import '../lib/colors.scss';
+
+.footer {
+    background-color: $purple;
+    padding-top: 77px;
+    color :#fff;
+    font-size: 14px;
+    &__title {
+        font-size: 24px;
+        margin-bottom: 11px;
+        color: #fff;
+        font-family: 'bold';
+    }
+    &__box {
+        a {
+            color: #fff;
+            font-size: 16px;
+            line-height: 24px;
+            display: inline-block;
+            margin-bottom: 4px;
+            opacity: 0.8;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    p {
+        max-width: 292px;
+    }
+    &__copy {
+        background-color: #232323;
+        padding: 12px 0;
+        font-size: 14px;
+        margin-top: 100px;
+        ul {
+            display: flex;
+            gap: 40px;
+            a {
+                color: #fff;
+                font-size: 14px;
+            }
+        }
+    }
+    &__contact {
+        font-size: 18px;
+        margin-bottom: 15px;
+
+    }
+    &__mail {
+        display: flex;
+        flex-direction: column;
+        a {
+            color: #fff;
+            opacity: 0.8;
+        }
+    }
+    &__address {
+        color: #fff;
+        opacity: 0.8;
+        margin-bottom: 15px;
+        margin-bottom: 40px;
+    }
+    &__social {
+        gap: 15px;
+    }
+}

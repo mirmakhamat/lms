@@ -1,0 +1,41 @@
+@import '../../lib/colors.scss';
+
+.quote {
+    margin-bottom: 100px;
+    &__item {
+        width: 320px;
+        height: 383px;
+        border-radius: 300px;
+        border: 43px solid #FEFEFE;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        right: 0;
+        margin: auto;
+    }
+    &__box {
+        background-color: #fdede4;;
+        padding: 65px 40px;
+        color: $grey;
+        border-radius: 10px;
+    }
+    &__body {
+        line-height: 24px;
+    }
+    &__name {
+        color: $black;
+        font-size: 20px;
+        line-height: 28px;
+    }
+    &__head {
+        display: flex;
+        margin-bottom: 20px;
+        justify-content: space-between;
+    }
+    &__lvl {
+        font-size: 16px;
+        line-height: 24px;
+        color: #828282;
+    }
+}

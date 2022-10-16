@@ -1,0 +1,74 @@
+@import '../lib/colors.scss';
+
+.faq {
+    &__box {
+        background-color: #fff;
+        box-shadow: 0px 5px 20px rgba(46, 144, 209, 0.08);
+        border-radius: 10px;
+        padding: 24px;
+        transition: 0.5s;
+        margin-bottom: 24px;
+        &.open {
+            background-color: #efefff;
+            .faq{
+                &__body {
+                    padding-top: 16px;
+                    max-height: 400px;
+                }
+                &__status {
+                    background-color: $purple;
+                    &::before {
+                        background-color: #fff;
+                        transform: rotate(45deg);
+                    }
+                    &::after {
+                        background-color: #fff;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+    &__head {
+        display: flex;
+        align-items: flex-start;
+        cursor: pointer;
+    }
+    &__title {
+        flex: 1;
+        padding-right: 10px;
+    }
+    &__body {
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        color: #585858;
+        line-height: 24px;
+    }
+    &__status {
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        position: relative;
+        transition: 0.5s;
+        &::before,
+        &::after {
+            content: '';
+            transition: 0.5s;
+            width: 18px;
+            height: 2px;
+            background-color: $purple;
+            display: inline-block;
+            position: absolute;
+            border-radius: 1px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        &::after {
+            transform: rotate(90deg);
+        }
+    }
+}

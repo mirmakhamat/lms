@@ -20,14 +20,28 @@ h1 {
     font-family: 'heavy';
     margin: 0;
     font-size: 60px;
+    font-weight: normal;
 }
 
 h2 {
     font-size: 46px;
     font-family: 'heavy';
+    font-weight: normal;
 }
 
 h3 {
     font-size: 36px;
     font-family: 'bold';
+    font-weight: normal;
+}
+
+h4 {
+    font-size: 24px;
+    font-family: 'bold';
+    font-weight: normal;
+}
+
+hr {
+    border-bottom: 1px solid #efefff;
+    margin: 0;
 }

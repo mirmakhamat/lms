@@ -1,0 +1,111 @@
+@import '../lib/colors.scss';
+@import '../lib/mixins.scss';
+
+.course {
+    &s {
+        &__filter {
+            padding: 30px;
+            background: #fff;
+            box-shadow: 0px 4px 20px #f7f6fb;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            &--title {
+                font-size: 20px;
+                line-height: 28px;
+                color: #000;
+                margin-bottom: 20px;
+            }
+            input[type=checkbox] {
+                display: none;
+                &:checked + label{
+                    color: #000;
+                    &:before {
+                        background-color: $purple;
+                        background-image: url('@/assets/icons/check.png');
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: contain;
+                    }
+                }
+            }
+            label {
+                font-size: 16px;
+                color: #333;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                margin-bottom: 18px;
+                &:before {
+                    content: '';
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 4px;
+                    border: 1px solid $purple;
+                    margin-right: 15px;
+                }
+            }
+        }
+        &__category {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 32px;
+            button {
+                padding: 5px 20px;
+                border-radius: 4px;
+                background-color: #efefff;
+                color: #4f4f4f;
+                font-size: 16px;
+                line-height: 24px;
+                &:hover,
+                &.active {
+                    background-color: $purple;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    &__box {
+        background-color: lighten($blue, 40%);
+        border-radius: 10px;
+        padding: 40px;
+    }
+    &__flag {
+        margin-bottom: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: block;
+    }
+    &__title {
+        font-size: 26px;
+        font-family: 'bold';
+        line-height: 113%;
+        margin-bottom: 20px;
+        color: $black;
+        display: inline-block;
+    }
+    &__info {
+        b {
+            font-weight: normal;
+            font-family: 'bold';
+        }
+    }
+    &__bottom {
+        margin-top: 20px;
+        @include flex(center, space-between);
+        a {
+            color: $purple;
+            display: flex;
+            align-items: center;
+            img {
+                margin-left: 10px;
+            }
+        }
+    }
+    &__price {
+        font-size: 20px;
+        line-height: 113%;
+        font-family: 'bold';
+    }
+}
