@@ -9,14 +9,12 @@
             </div>
         </div>
         <div class="row mb-100">
-            <div class="col-4 col-md-12">
-                <BlogItem/>
-            </div>
-            <div class="col-4 col-md-12">
-                <BlogItem/>
-            </div>
-            <div class="col-4 col-md-12">
-                <BlogItem/>
+            <div 
+                class="col-4 col-md-12" 
+                v-for="blog of blogs"
+                :key="blog._id"
+                >
+                <BlogItem :blog="blog"/>
             </div>
         </div>
     </div>
@@ -25,7 +23,8 @@
 <script>
 import BlogItem from '../blog/BlogItem.vue';
 export default {
-    components: { BlogItem }
+    components: { BlogItem },
+    props:['blogs']
 }
 </script>
 

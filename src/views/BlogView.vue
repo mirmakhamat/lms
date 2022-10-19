@@ -4,17 +4,16 @@
             <BreadCrumbs/>
             <div class="row">
                 <div class="col-8 col-md-12">
-                    <h1 class="mb-30">Новая система скидок в Language2GO: успейте забрать максимум!</h1>
+                    <h1 class="mb-30">{{blog.title}}</h1>
                     <div class="text-blue mt-30 mb-30">
-                        05-06-2022
+                        {{getDate(blog.createdAt)}}
                     </div>
+                    <img v-if="blog.img" :src="`${url}/${blog.img}`" alt="" class="full mb-20">
                     <div class="blog__text mb-30">
-                        <p>Для многих стоимость изучения иностранного языка является важным критерием при выборе системы обучения. Именно поэтому мы предлагаем нашим клиентам не только бесплатные пробные уроки, но и гибкую систему скидок, которая позволит существенно снизить затраты.</p>
-                        <p>Начните с выбора оптимальной программы обучения: бесплатное тестирование определит ваш уровень знаний и предложит лучший вариант для быстрого прогресса. Следующий шаг — активация купона и приятное изменение стоимости курса в меньшую сторону.</p>
-                        <p>Купоны на скидку можно найти в соцсетях Language2GO, получить в рассылке для лояльных клиентов или в приобрести в подарок для ваших близких, а бесплатные уроки ждут всех желающих на нашем сайте!</p>
+                        <p>{{blog.text}}</p>
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-30">
-                        <router-link to="/blog" class="blog__category">Новость</router-link>
+                        <router-link to="/blogs" class="blog__category">Новость</router-link>
                         <div class="blog__social">
                             Поделиться
                             <a href="#" target="_blank"><img src="@/assets/icons/fb.svg" alt=""></a>
@@ -26,12 +25,15 @@
                     <hr class="mb-50">
                     <div class="d-flex align-items-center justify-content-between mb-40">
                         <h4>Другие новости</h4>
-                        <router-link to="/" class="btn outline">Все новости</router-link>
+                        <router-link to="/blogs" class="btn outline">Все новости</router-link>
                     </div>
                     <div class="row">
-                        <div class="col-12"><BlogItem type='true'/></div>
-                        <div class="col-12"><BlogItem type='true'/></div>
-                        <div class="col-12"><BlogItem type='true'/></div>
+                        <div 
+                            class="col-12"
+                            v-for="blog of otherBlogs" 
+                            :key="blog._id">
+                            <BlogItem type='true' :blog="blog"/>
+                        </div>
                     </div>
                 </div>
                 <div class="col-4 col-md-12">
@@ -48,7 +50,39 @@
 import BreadCrumbs from '@/components/lib/BreadCrumbs.vue';
 import BlogItem from '@/components/blog/BlogItem.vue';
 export default {
-    components: { BreadCrumbs, BlogItem }
+    data() {
+        return {
+            id:0,
+        }
+    },
+    components: { 
+        BreadCrumbs, 
+        BlogItem 
+    },
+    methods: {
+        getDate(d){
+            if(d){
+                let t = new Date(d)
+                return `${t.getDate()}-${t.getMonth()+1}-${t.getFullYear()}`
+            }
+        }
+    },
+    watch:{
+        $route(to){
+            window.scrollTo(0,0)
+            this.$store.dispatch('getBlog', to.params.id)
+        }
+    },
+    computed: {
+        blog(){return this.$store.getters.blog},
+        url(){return this.$store.getters.url},
+        otherBlogs(){return this.$store.getters.otherBlogs}
+    },
+    mounted() {
+        window.scrollTo(0,0)
+        this.id = this.$route.params.id
+        this.$store.dispatch('getBlog', this.id)
+    },
 }
 </script>
 

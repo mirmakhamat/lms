@@ -18,17 +18,8 @@
             }"
             class="courses__slide mb-100"
         >
-            <SplideSlide>
-                <CourseBox/>
-            </SplideSlide>
-            <SplideSlide>
-                <CourseBox/>
-            </SplideSlide>
-            <SplideSlide>
-                <CourseBox/>
-            </SplideSlide>
-            <SplideSlide>
-                <CourseBox/>
+            <SplideSlide v-for="course of courses" :key="course._id">
+                <CourseBox :course="course"/>
             </SplideSlide>
         </Splide>
     </div>
@@ -38,7 +29,8 @@
 import CourseBox from '../course/CourseBox.vue';
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
 export default {
-    components: { CourseBox, Splide, SplideSlide }
+    components: { CourseBox, Splide, SplideSlide },
+    props:['courses']
 }
 </script>
 

@@ -15,20 +15,11 @@
                     <button>Интересное</button>
                 </div>
                     <div class="row">
-                        <div class="col-12">
-                            <BlogItem/>
-                        </div>
-                        <div class="col-6 col-md-12">
-                            <BlogItem/>
-                        </div>
-                        <div class="col-6 col-md-12">
-                            <BlogItem/>
-                        </div>
-                        <div class="col-6 col-md-12">
-                            <BlogItem/>
-                        </div>
-                        <div class="col-6 col-md-12">
-                            <BlogItem/>
+                        <div
+                            v-for="(blog, index) of blogs"
+                            :key="blog._id"
+                            :class="`${index==0?'col-12':'col-6 col-md-12'}`">
+                            <BlogItem :blog="blog"/>
                         </div>
                     </div>
                 </div>
@@ -46,7 +37,10 @@
 import BreadCrumbs from '@/components/lib/BreadCrumbs.vue';
 import BlogItem from '@/components/blog/BlogItem.vue';
 export default {
-    components: { BreadCrumbs, BlogItem }
+    components: { BreadCrumbs, BlogItem },
+    computed: {
+        blogs(){return this.$store.getters.blogs},
+    }
 }
 </script>
 

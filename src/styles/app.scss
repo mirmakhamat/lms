@@ -9,6 +9,9 @@
 @import './lib/reset.scss';
 @import './lib/class.scss';
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'medium';

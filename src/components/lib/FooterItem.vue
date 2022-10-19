@@ -15,12 +15,12 @@
                     Обучение
                 </div>
                 <ul>
-                    <li><router-link to="'/'">Все языки</router-link></li>
-                    <li><router-link to="'/'">Взрослым</router-link></li>
-                    <li><router-link to="'/'">Детям и подросткам</router-link></li>
-                    <li><router-link to="'/'">Мини-курсы</router-link></li>
-                    <li><router-link to="'/'">Тренажеры</router-link></li>
-                    <li><router-link to="'/'">Индивидуальные занятия</router-link></li>
+                    <li><router-link to="/">Все языки</router-link></li>
+                    <li><router-link to="/">Взрослым</router-link></li>
+                    <li><router-link to="/">Детям и подросткам</router-link></li>
+                    <li><router-link to="/">Мини-курсы</router-link></li>
+                    <li><router-link to="/">Тренажеры</router-link></li>
+                    <li><router-link to="/">Индивидуальные занятия</router-link></li>
                 </ul>
             </div>
             <div class="footer__box">
@@ -28,12 +28,12 @@
                     Информация
                 </div>
                 <ul>
-                    <li><router-link to="'/'">О нас</router-link></li>
-                    <li><router-link to="'/'">Отзывы</router-link></li>
-                    <li><router-link to="'/'">Новости</router-link></li>
-                    <li><router-link to="'/'">Частые вопросы</router-link></li>
-                    <li><router-link to="'/'">Условия оплаты</router-link></li>
-                    <li><router-link to="'/'">Контакты</router-link></li>
+                    <li><router-link to="/">О нас</router-link></li>
+                    <li><router-link to="/">Отзывы</router-link></li>
+                    <li><router-link to="/">Новости</router-link></li>
+                    <li><router-link to="/">Частые вопросы</router-link></li>
+                    <li><router-link to="/">Условия оплаты</router-link></li>
+                    <li><router-link to="/">Контакты</router-link></li>
                 </ul>
             </div>
             <div class="footer__box">

@@ -1,15 +1,15 @@
 <template>
   <div class="home">
     <WelcomeItem/>
-    <CoursesList/>
+    <CoursesList :courses="courses"/>
     <ForWhom/>
     <WhyUs/>
     <EffectBox/>
     <HowItem/>
     <QuoteList/>
     <RegBox/>
-    <BlogList/>
-    <FaqList/>
+    <BlogList :blogs="blogs"/>
+    <FaqList :faq="faq"/>
   </div>
 </template>
 
@@ -39,6 +39,17 @@ export default {
     RegBox,
     BlogList,
     FaqList
-}
+  },
+  computed:{
+    courses(){
+        return this.$store.getters.courses
+    },
+    blogs(){
+        return this.$store.getters.blogs
+    },
+    faq(){
+      return this.$store.getters.faqLast
+    }
+  }
 }
 </script>

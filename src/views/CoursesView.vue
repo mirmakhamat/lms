@@ -4,38 +4,24 @@
             <BreadCrumbs/>
             <h1 class="mb-30">Курсы</h1>
             <div class="courses__category">
-                <button class="active">Все</button>
-                <button>Китайский</button>
-                <button>Английский</button>
-                <button>Немецкий</button>
-                <button>Испанский</button>
+                <button 
+                    @click="filterCategories(null)"
+                    :class="{'active':!activeBtn}">
+                    Все
+                </button>
+                <button
+                    v-for="category of categories"
+                    :key="category._id"
+                    :class="{'active':category._id == activeBtn}"
+                    @click="filterCategories(category._id)">
+                    {{category.name}}
+                </button>
             </div>
             <div class="row">
                 <div class="col-9 col-md-12">
                     <div class="row">
-                        <div class="col-6 col-md-12">
-                            <CourseBox/>
-                        </div>
-                        <div class="col-6 col-md-12">
-                            <CourseBox/>
-                        </div>
-                        <div class="col-6 col-md-12">
-                            <CourseBox/>
-                        </div>
-                        <div class="col-6 col-md-12">
-                            <CourseBox/>
-                        </div>
-                        <div class="col-6 col-md-12">
-                            <CourseBox/>
-                        </div>
-                        <div class="col-6 col-md-12">
-                            <CourseBox/>
-                        </div>
-                        <div class="col-6 col-md-12">
-                            <CourseBox/>
-                        </div>
-                        <div class="col-6 col-md-12">
-                            <CourseBox/>
+                        <div class="col-6 col-md-12" v-for="course of courses" :key="course._id">
+                            <CourseBox :course="course"/>
                         </div>
                     </div>
                 </div>
@@ -98,7 +84,32 @@
 import BreadCrumbs from '@/components/lib/BreadCrumbs.vue';
 import CourseBox from '@/components/course/CourseBox.vue';
 export default {
-    components: { BreadCrumbs, CourseBox }
+    data() {
+        return {
+            activeBtn:null
+        }
+    },
+    components: { BreadCrumbs, CourseBox },
+    computed:{
+        categories(){
+            return this.$store.getters.categories
+        },
+        courses(){
+            return this.$store.getters.courses
+        }
+    },
+    methods: {
+        filterCategories(catId){
+            this.activeBtn = catId
+            if(catId)
+                this.$store.dispatch('filterCourses', catId)
+            else
+                this.$store.dispatch('getAllCourses')
+        }
+    },
+    mounted() {
+        this.$store.dispatch('getAllCategories')
+    },
 }
 </script>
 

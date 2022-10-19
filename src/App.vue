@@ -11,7 +11,13 @@ export default {
   components: {
     HeaderItem,
     FooterItem
-  }
+  },
+  mounted() {
+      this.$store.dispatch('getAllCourses')
+      this.$store.dispatch('getAllBlogs')
+      this.$store.dispatch('getAllFaq')
+      this.$store.dispatch('getLastFaq')
+  },
 }
 </script>
 
